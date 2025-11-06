@@ -125,7 +125,7 @@ function App() {
                 <div className="donor-info">
                   <h3>Salim Isa</h3>
                   <p className="donor-location">🗺️ Jabi Road, Isa Kaita </p>
-                  <p className="donor-details">Last donation: 2 months ago</p>
+                  <p className="donor-details">Last donation: 5 months ago</p>
                   <p className="donor-details">Ready to donate: Yes</p>
                 </div>
                 <button className="btn-contact">Contact Donor</button>
@@ -137,8 +137,8 @@ function App() {
                   <span className="status-badge available">Available</span>
                 </div>
                 <div className="donor-info">
-                  <h3>Sarah Smith</h3>
-                  <p className="donor-location">🗺️ New Millini</p>
+                  <h3>Mukthar Ibrahim</h3>
+                  <p className="donor-location">🗺️ New Millennium City</p>
                   <p className="donor-details">Last donation: 3 months ago</p>
                   <p className="donor-details">Ready to donate: Yes</p>
                 </div>
@@ -148,13 +148,13 @@ function App() {
               <div className="donor-card">
                 <div className="donor-header">
                   <div className="blood-type-badge">B+</div>
-                  <span className="status-badge available">Available</span>
+                  <span className="status-badge unavailable">Unavailable</span>
                 </div>
                 <div className="donor-info">
                   <h3>Mike Johnson</h3>
-                  <p className="donor-location">📍 Chicago, IL</p>
+                  <p className="donor-location">🗺️ Unguwan Rimi</p>
                   <p className="donor-details">Last donation: 1 month ago</p>
-                  <p className="donor-details">Ready to donate: Yes</p>
+                  <p className="donor-details">Ready to donate: No</p>
                 </div>
                 <button className="btn-contact">Contact Donor</button>
               </div>
@@ -181,7 +181,7 @@ function App() {
                 <div className="dashboard-stat">
                   <div className="stat-icon">🩸</div>
                   <div>
-                    <div className="stat-value">12</div>
+                    <div className="stat-value">10</div>
                     <div className="stat-desc">Pending Requests</div>
                   </div>
                 </div>
@@ -193,7 +193,7 @@ function App() {
                   </div>
                 </div>
                 <div className="dashboard-stat">
-                  <div className="stat-icon">👥</div>
+                  <div className="stat-icon">🫂</div>
                   <div>
                     <div className="stat-value">28</div>
                     <div className="stat-desc">Matched Donors</div>
