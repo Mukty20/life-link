@@ -8,7 +8,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(145deg ,#f5f7fa 10%, #01193e 130%);
+  background: linear-gradient(125deg ,#f5f7fa 0%, #cb0a0a 130%);
 }
 
 .header {
@@ -240,6 +240,80 @@
   background: #f0f0f0;
 }
 
+.donate-request-section {
+  background: linear-gradient(135deg, #b20f0f 0%, #4021bd 100%);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+.donate-request-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.donate-request-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.donate-request-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.donate-request-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.donate-request-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.request-stat {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.donate-request-actions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.btn-donate {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.btn-donate-primary {
+  background: white;
+  color: #b20f0f;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-donate-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: #f0f0f0;
+}
 
 .portal-section {
   background: white;
@@ -797,5 +871,38 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+  }
+
+  .donate-request-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .donate-request-icon {
+    font-size: 3rem;
+  }
+
+  .donate-request-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .donate-request-text p {
+    font-size: 1rem;
+  }
+
+  .donate-request-stats {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .donate-request-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-donate-primary,
+  .btn-donate-secondary {
+    flex: 1;
+    min-width: 150px;
   }
 }

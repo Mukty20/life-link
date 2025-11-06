@@ -37,12 +37,12 @@ function App() {
           </p>
           <div className="home-buttons">
             <button className="btn-home1">I Want to Donate</button>
-            <button className="btn-home2">I Need Blood</button>
+            <a href='#donors'><button className="btn-home2">I Need Blood</button></a>
           </div>
         </div>
         <div className="home-stats">
           <div className="stat-card">
-            <div className="stat-number">1,476</div>
+            <div className="stat-number">3,476</div>
             <div className="stat-label">Active Donors</div>
           </div>
           <div className="stat-card">
@@ -62,16 +62,31 @@ function App() {
         <div className="tab-container">
           <button
             className={`tab ${activeTab === 'donor' ? 'active' : ''}`}
-            onClick={() => setActiveTab('donor')}
-          >
-            Donor Portal
+            onClick={() => setActiveTab('donor')}>
+           Find Donor Portal
           </button>
           <button
             className={`tab ${activeTab === 'hospital' ? 'active' : ''}`}
-            onClick={() => setActiveTab('hospital')}
-          >
+            onClick={() => setActiveTab('hospital')}>
             Hospital Portal
           </button>
+        </div>
+
+        <div className="donate-request-section">
+          <div className="donate-request-content">
+            <div className="donate-request-text">
+              <h2>Urgent: Blood Donation Needed</h2>
+              <p>Hospitals in your area are running low on blood supplies. Your donation can save multiple lives today.</p>
+              <div className="donate-request-stats">
+                <span className="request-stat">🔴 <strong>12</strong> Critical Requests</span>
+                <span className="request-stat">⚠️ <strong>28</strong> Urgent Needs</span>
+                <span className="request-stat">📅 <strong>45</strong> Pending This Week</span>
+              </div>
+            </div>
+            <div className="donate-request-actions">
+              <button className="btn-donate">Donate Now</button>
+            </div>
+          </div>
         </div>
 
         
@@ -109,8 +124,7 @@ function App() {
                     className="filter-input"
                     placeholder="Enter city or area"
                     value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                  />
+                    onChange={(e) => setLocation(e.target.value)}/>
                 </div>
                 <button className="btn-search">Search Donors</button>
               </div>
@@ -147,7 +161,7 @@ function App() {
 
               <div className="donor-card">
                 <div className="donor-header">
-                  <div className="blood-type-badge">B+</div>
+                  <div className="blood-type-badge">AB</div>
                   <span className="status-badge unavailable">Unavailable</span>
                 </div>
                 <div className="donor-info">
@@ -159,6 +173,7 @@ function App() {
                 <button className="btn-contact">Contact Donor</button>
               </div>
             </div>
+          
 
             <div className="cta-section">
               <h3>Want to become a donor?</h3>
@@ -173,7 +188,7 @@ function App() {
           <section className="portal-section" id="hospitals">
             <div className="portal-header">
               <h2>Hospital Portal</h2>
-              <p>Manage blood requests and connect with donors</p>
+              <p>Manage blood requests</p>
             </div>
 
             <div className="hospital-dashboard">
@@ -195,7 +210,7 @@ function App() {
                 <div className="dashboard-stat">
                   <div className="stat-icon">🫂</div>
                   <div>
-                    <div className="stat-value">28</div>
+                    <div className="stat-value">30</div>
                     <div className="stat-desc">Matched Donors</div>
                   </div>
                 </div>
