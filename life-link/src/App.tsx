@@ -1,10 +1,44 @@
 import { useState } from 'react'
 import './App.css'
+import SignIn from './components/pages/SignIn'
+import Login from './components/pages/Login'
+import DonationForm from './components/pages/DonationForm'
+import DonorDashboard from './components/pages/DonorDashboard'
+import HospitalDashboard from './components/pages/HospitalDashboard'
 
 function App() {
   const [activeTab, setActiveTab] = useState<'donor' | 'hospital'>('donor')
   const [bloodType, setBloodType] = useState('')
   const [location, setLocation] = useState('')
+  const [showLogin, setShowLogin] = useState(false)
+  const [showSignIn, setShowSignIn] = useState(false)
+  const [showDonationForm, setShowDonationForm] = useState(false)
+  const [showDonorDashboard, setShowDonorDashboard] = useState(false)
+  const [showHospitalDashboard, setShowHospitalDashboard] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  // Show dashboards if active
+  if (showDonorDashboard) {
+    return (
+      <div className="app">
+        <DonorDashboard 
+          onBack={() => setShowDonorDashboard(false)}
+          onOpenDonationForm={() => setShowDonationForm(true)}
+        />
+        {showDonationForm && (
+          <DonationForm onClose={() => setShowDonationForm(false)} />
+        )}
+      </div>
+    )
+  }
+
+  if (showHospitalDashboard) {
+    return (
+      <div className="app">
+        <HospitalDashboard onBack={() => setShowHospitalDashboard(false)} />
+      </div>
+    )
+  }
 
   return (
     <div className="app">
@@ -15,15 +49,28 @@ function App() {
             <h1>LIFE-LINK</h1>
             <span className="motto">Connecting Hearts, Saving Lives</span>
           </div>
-          <nav className="nav">
-            <a href="#home">Home</a>
-            <a href="#donors">Find Donors</a>
-            <a href="#hospitals">Hospitals</a>
-            <a href="#about">About</a>
+          <button 
+            className="mobile-menu-toggle" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={mobileMenuOpen ? 'hamburger open' : 'hamburger'}></span>
+            <span className={mobileMenuOpen ? 'hamburger open' : 'hamburger'}></span>
+            <span className={mobileMenuOpen ? 'hamburger open' : 'hamburger'}></span>
+          </button>
+          <nav className={`nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+            <a href="#home" onClick={(e) => { e.preventDefault(); setShowDonorDashboard(false); setShowHospitalDashboard(false); setMobileMenuOpen(false) }}>Home</a>
+            <button className="nav-link-btn" onClick={() => { setShowDonorDashboard(true); setMobileMenuOpen(false) }}>Donor Dashboard</button>
+            <button className="nav-link-btn" onClick={() => { setShowHospitalDashboard(true); setMobileMenuOpen(false) }}>Hospital Dashboard</button>
+            <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
+            <div className="nav-auth-buttons">
+              <button className="btn-secondary" onClick={() => { setShowLogin(true); setMobileMenuOpen(false) }}>Log In</button>
+              <button className="btn-primary" onClick={() => { setShowSignIn(true); setMobileMenuOpen(false) }}>Sign Up</button>
+            </div>
           </nav>
-          <div className="auth-buttons">
-            <button className="btn-secondary">Log In</button>
-            <button className="btn-primary">Sign Up</button>
+          <div className="auth-buttons desktop-auth">
+            <button className="btn-secondary" onClick={() => setShowLogin(true)}>Log In</button>
+            <button className="btn-primary" onClick={() => setShowSignIn(true)}>Sign Up</button>
           </div>
         </div>
       </header>
@@ -36,7 +83,7 @@ function App() {
             Connecting donors with hospitals in need. Your donation can save a life today.
           </p>
           <div className="home-buttons">
-            <button className="btn-home1">I Want to Donate</button>
+            <button className="btn-home1" onClick={() => setShowDonationForm(true)}>I Want to Donate</button>
             <a href='#donors'><button className="btn-home2">I Need Blood</button></a>
           </div>
         </div>
@@ -84,7 +131,7 @@ function App() {
               </div>
             </div>
             <div className="donate-request-actions">
-              <button className="btn-donate">Donate Now</button>
+              <button className="btn-donate" onClick={() => setShowDonationForm(true)}>Donate Now</button>
             </div>
           </div>
         </div>
@@ -178,7 +225,7 @@ function App() {
             <div className="cta-section">
               <h3>Want to become a donor?</h3>
               <p>Join our community and help save lives</p>
-              <button className="btn-register">Register as Donor</button>
+              <button className="btn-register" onClick={() => setShowSignIn(true)}>Register as Donor</button>
             </div>
           </section>
         )}
@@ -274,7 +321,7 @@ function App() {
                   </div>
                   <div className="request-info">
                     <p><strong>Units:</strong> 3 bags</p>
-                    <p><strong>Date:</strong> Dec 15, 2024</p>
+                    <p><strong>Date:</strong> Dec 15, 2026</p>
                     <p><strong>Status:</strong> <span className="status-pending">Pending</span></p>
                   </div>
                   <div className="request-actions">
@@ -290,7 +337,7 @@ function App() {
                   </div>
                   <div className="request-info">
                     <p><strong>Units:</strong> 2 bags</p>
-                    <p><strong>Date:</strong> Dec 20, 2024</p>
+                    <p><strong>Date:</strong> Dec 20, 2026</p>
                     <p><strong>Status:</strong> <span className="status-matched">Matched</span></p>
                   </div>
                   <div className="request-actions">
@@ -327,6 +374,33 @@ function App() {
           <p>&copy; 2025 LIFE-LINK. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Modals */}
+      {showLogin && (
+        <Login 
+          onSwitchToSignIn={() => {
+            setShowLogin(false)
+            setShowSignIn(true)
+          }}
+          onClose={() => setShowLogin(false)}
+        />
+      )}
+      
+      {showSignIn && (
+        <SignIn 
+          onSwitchToLogin={() => {
+            setShowSignIn(false)
+            setShowLogin(true)
+          }}
+          onClose={() => setShowSignIn(false)}
+        />
+      )}
+
+      {showDonationForm && (
+        <DonationForm 
+          onClose={() => setShowDonationForm(false)}
+        />
+      )}
     </div>
   )
 }
