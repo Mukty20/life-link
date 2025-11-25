@@ -47,7 +47,7 @@ function App() {
         <div className="header-container">
           <div className="logo">
             <h1>LIFE-LINK</h1>
-            <span className="motto">Connecting Hearts, Saving Lives</span>
+            <span className="motto">Where Every Drop Becomes Hope</span>
           </div>
           <button 
             className="mobile-menu-toggle" 
@@ -97,7 +97,7 @@ function App() {
             <div className="stat-label">Partner Hospitals</div>
           </div>
           <div className="stat-card">
-            <div className="stat-number">7,565</div>
+            <div className="stat-number">4,565</div>
             <div className="stat-label">Lives Saved</div>
           </div>
         </div>
@@ -127,7 +127,7 @@ function App() {
               <div className="donate-request-stats">
                 <span className="request-stat">🔴 <strong>12</strong> Critical Requests</span>
                 <span className="request-stat">⚠️ <strong>28</strong> Urgent Needs</span>
-                <span className="request-stat">📅 <strong>45</strong> Pending This Week</span>
+                <span className="request-stat">📅 <strong>35</strong> Pending This Week</span>
               </div>
             </div>
             <div className="donate-request-actions">
@@ -332,6 +332,22 @@ function App() {
 
                 <div className="request-card">
                   <div className="request-header">
+                    <span className="blood-type-badge-small">O+</span>
+                    <span className="urgency-badge urgent">Urgent</span>
+                  </div>
+                  <div className="request-info">
+                    <p><strong>Units:</strong> 3 bags</p>
+                    <p><strong>Date:</strong> Dec 15, 2026</p>
+                    <p><strong>Status:</strong> <span className="status-pending">Pending</span></p>
+                  </div>
+                  <div className="request-actions">
+                    <button className="btn-action">View Matches</button>
+                    <button className="btn-action-secondary">Cancel</button>
+                  </div>
+                </div>
+
+                <div className="request-card">
+                  <div className="request-header">
                     <span className="blood-type-badge-small">A-</span>
                     <span className="urgency-badge normal">Normal</span>
                   </div>
@@ -356,7 +372,7 @@ function App() {
         <div className="footer-content">
           <div className="footer-section">
             <h4>LIFE-LINK</h4>
-            <p>Connecting donors with hospitals to save lives every day.</p>
+            <p>The connection that keeps life going.</p>
           </div>
           <div className="footer-section">
             <h4>Quick Links</h4>
@@ -367,7 +383,7 @@ function App() {
           </div>
           <div className="footer-section">
             <h4>Contact</h4>
-            <p>Email: info@lifelink.org</p>
+            <p>Email: imuktar437@gmailcom</p>
           </div>
         </div>
         <div className="footer-bottom">

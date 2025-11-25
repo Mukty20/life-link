@@ -13,7 +13,6 @@ function Login({ onSwitchToSignIn, onClose }: LoginProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle login logic here
     console.log('Login data:', formData)
     alert('Logged in successfully!')
     onClose()

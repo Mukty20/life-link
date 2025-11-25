@@ -16,12 +16,11 @@ function SignIn({ onSwitchToLogin, onClose }: SignInProps) {
     bloodType: '',
     location: '',
     phone: '',
-    userType: 'donor' // 'donor' or 'hospital'
+    userType: 'donor'
   })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle sign up logic here
     console.log('Sign up data:', formData)
     alert('Account created successfully!')
     onClose()
