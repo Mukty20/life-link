@@ -13,13 +13,13 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center; 
-  background: #f1d8d8;
+  background: #e1c7c7;
 }
 
 .header {
   width: 100%;
-  background: #b20f0f;
-  color: white;
+  background: white;
+  color: black;
   padding: 1rem 2rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -31,7 +31,7 @@ html, body, #root {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   gap: 2rem;
   position: relative;
@@ -42,19 +42,12 @@ html, body, #root {
 }
 
 .logo h1 {
+  color: #880808;
   font-size: 1.8rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   font-weight: 750;
   letter-spacing: 1px;
-  white-space: nowrap;
-}
-
-.motto {
-  font-size: 0.85rem;
-  opacity: 1;
-  display: block;
-  margin-top: 0.25rem;
   white-space: nowrap;
 }
 
@@ -72,7 +65,6 @@ html, body, #root {
 .hamburger {
   width: 25px;
   height: 3px;
-  background: white;
   border-radius: 3px;
   transition: all 0.2s;
 }
@@ -99,7 +91,7 @@ html, body, #root {
 }
 
 .nav a {
-  color: white;
+  color: black;
   text-decoration: none;
   border-radius: 6px;
   padding: 0.5rem 0.75rem;
@@ -122,7 +114,7 @@ html, body, #root {
 
 .auth-buttons {
   display: flex;
-  gap: 100px;
+  gap: 10px;
 }
 
 .desktop-auth {
@@ -131,34 +123,37 @@ html, body, #root {
 
 .btn-primary,
 .btn-secondary {
-  padding: 0.6rem 1.5rem;
+  /* padding: 0.6rem 0.3rem; */
+  height: 40px;
   border: none;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s;
   font-size: 0.95rem;
 }
 
 .btn-primary {
-  background: white;
-  color: #b20f0f;
+  background: #880808;
+  color: rgb(255, 255, 255);
+  width: 90px;
+  justify-content: flex-end;
 }
 
 .btn-primary:hover {
-  background: #f0f0f0;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: #880808;
+  width: 90px;
+  border: 1px solid rgb(109, 109, 109);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
 }
 
 
@@ -167,6 +162,9 @@ html, body, #root {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  background-image: url("./components/images/image\ 59.png");
+  background-image: no-repeat;
+  background-size: 100%;
 }
 
 .home-content {
@@ -175,6 +173,7 @@ html, body, #root {
 }
 
 .home-title {
+  color: white;
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
@@ -182,7 +181,7 @@ html, body, #root {
 
 .home-subtitle {
   font-size: 1.25rem;
-  color: black;
+  color: white;
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
@@ -196,8 +195,7 @@ html, body, #root {
   flex-wrap: wrap;
 }
 
-.btn-home1,
-.btn-home2 {
+.btn-home1{
   padding: 1rem 2.5rem;
   border: none;
   border-radius: 12px;
@@ -208,7 +206,8 @@ html, body, #root {
 }
 
 .btn-home1 {
-  background: #b20f0f;
+  margin-top: 10px;
+  background: #880808;
   color: white;
   box-shadow: 0 4px 15px rgba(178, 15, 15, 0.4);
 }
@@ -218,16 +217,6 @@ html, body, #root {
   box-shadow: 0 6px 20px rgba(146, 13, 24, 0.6);
 }
 
-.btn-home2 {
-  background: #b20f0f;
-  color: white;
-}
-
-.btn-home2:hover {
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(146, 13, 24, 0.6);
-}
 
 .home-stats {
   display: grid;
@@ -260,60 +249,13 @@ html, body, #root {
   font-weight: 500;
   margin-top: 0.5rem;
 }
-
-
-.main-content {
-  flex: 1;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 2rem;
+h1{
+  text-align: center;
+  font-size: 3.2rem;
+  text-decoration: solid;
+  margin-top: 40px;
+  color: #880808;
 }
-
-
-.tab-container {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  background: white;
-  padding: 0.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border: solid 2px black;
-}
-
-.tab {
-  flex: 1;
-  padding: 1rem 2rem;
-  border: none;
-  background: transparent;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  color: #666;
-}
-
-.tab.active {
-  background: #b20f0f;
-  color: white;
-  box-shadow: 0 4px 10px rgba(178, 15, 15, 0.3);
-}
-
-.tab:hover:not(.active) {
-  background: #f0f0f0;
-}
-
-.donate-request-section {
-  background: #b20f0f;
-  border-radius: 16px;
-  padding: 2.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  color: white;
-}
-
 .donate-request-content {
   display: flex;
   align-items: center;
@@ -378,15 +320,6 @@ html, body, #root {
   background: #f0f0f0;
 }
 
-.portal-section {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
-  border: solid 1px black;
-}
-
 .portal-header {
   text-align: center;
   margin-bottom: 2rem;
@@ -402,7 +335,6 @@ html, body, #root {
   color: #666;
   font-size: 1.1rem;
 }
-
 
 .search-container {
   margin-bottom: 2rem;
@@ -460,34 +392,6 @@ html, body, #root {
   box-shadow: 0 4px 12px rgba(182, 11, 11, 0.4);
 }
 
-/* Donor Cards */
-.donor-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.donor-card {
-  background: #f8f9fa;
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 2px solid #e0e0e0;
-  transition: all 0.3s;
-}
-
-.donor-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-color: #b20f0f;
-}
-
-.donor-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
 
 .blood-type-badge {
   background: #b20f0f;
@@ -496,15 +400,6 @@ html, body, #root {
   border-radius: 8px;
   font-weight: 700;
   font-size: 1.1rem;
-}
-
-.blood-type-badge-small {
-  background: #b20f0f;
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 0.9rem;
 }
 
 .status-badge {
@@ -521,24 +416,6 @@ html, body, #root {
 .status-badge.unavailable {
   background: #ec2525;
   color: #155724;
-}
-
-.donor-info h3 {
-  color: #333;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-}
-
-.donor-location {
-  color: #666;
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-}
-
-.donor-details {
-  color: #888;
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
 }
 
 .btn-contact {
@@ -559,63 +436,6 @@ html, body, #root {
   box-shadow: 0 4px 12px rgba(153, 11, 11, 0.4);
 }
 
-.cta-section {
-  text-align: center;
-  padding: 2rem;
-  background: #b20f0f;
-  border-radius: 12px;
-  color: white;
-}
-
-.cta-section h3 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.cta-section p {
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-}
-
-.btn-register {
-  padding: 1rem 2.5rem;
-  background: white;
-  color: #a71313;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btn-register:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.hospital-dashboard {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.dashboard-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-}
-
-.dashboard-stat {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  border: 1px solid #e0e0e0;
-}
-
 .stat-icon {
   font-size: 2.5rem;
 }
@@ -623,7 +443,7 @@ html, body, #root {
 .stat-value {
   font-size: 2rem;
   font-weight: 800;
-  color: #b20f0f;
+  color: #1d0fb2;
 }
 
 .stat-desc {
@@ -838,8 +658,9 @@ html, body, #root {
 
 .footer {
   width: 100%;
-  background: #b20f0f;
-  color: white;
+  background-image: url("./components/images/image60.jpg");
+  background-size: cover;
+  color: black;
   padding: 30px;
   margin-top: 2rem;
 }
@@ -865,7 +686,7 @@ html, body, #root {
 
 .footer-section a {
   display: block;
-  color: white;
+  color: black;
   text-decoration: none;
   margin-bottom: 0.5rem;
   opacity: 0.9;
@@ -937,7 +758,7 @@ html, body, #root {
     top: 100%;
     left: 0;
     right: 0;
-    background: #b20f0f;
+    background: #ffffff;
     flex-direction: column;
     gap: 0;
     width: 100%;
@@ -1311,7 +1132,7 @@ html, body, #root {
 .auth-link-btn {
   background: none;
   border: none;
-  color: #b20f0f;
+  color: #43be12;
   font-weight: 600;
   cursor: pointer;
   text-decoration: underline;
@@ -1367,14 +1188,15 @@ html, body, #root {
 
 /* Dashboard Styles */
 .dashboard-container {
+  width: 100%;
   min-height: 100vh;
   background: #f1d8d8;
   padding: 2rem;
 }
 
 .dashboard-header {
-  background: #b20f0f;
-  color: white;
+  background: rgb(228, 218, 218);
+  color: rgb(0, 0, 0);
   padding: 2rem;
   border-radius: 12px;
   margin-bottom: 2rem;
@@ -1389,13 +1211,14 @@ html, body, #root {
 .dashboard-header h1 {
   font-size: 2.5rem;
   margin: 0.5rem 0;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .dashboard-header p {
   margin: 0.5rem 0 0;
   opacity: 0.95;
-  font-size: 1.1rem;
+  text-align: center;
+  font-size: 1.4rem;
 }
 
 .btn-back {
@@ -1495,10 +1318,9 @@ html, body, #root {
 }
 
 .stat-value-large {
-  font-size: 2.5rem;
+  font-size: 2.rem;
   font-weight: 800;
   color: #b20f0f;
-  margin-bottom: 0.25rem;
 }
 
 .stat-label-large {
@@ -1964,7 +1786,7 @@ html, body, #root {
 .nav-link-btn {
   background: transparent;
   border: none;
-  color: white;
+  color: black;
   text-decoration: none;
   border-radius: 6px;
   padding: 0.5rem 1rem;

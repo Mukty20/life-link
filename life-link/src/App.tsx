@@ -6,10 +6,9 @@ import DonationForm from './components/pages/DonationForm'
 import DonorDashboard from './components/pages/DonorDashboard'
 import HospitalDashboard from './components/pages/HospitalDashboard'
 
+
+
 function App() {
-  const [activeTab, setActiveTab] = useState<'donor' | 'hospital'>('donor')
-  const [bloodType, setBloodType] = useState('')
-  const [location, setLocation] = useState('')
   const [showLogin, setShowLogin] = useState(false)
   const [showSignIn, setShowSignIn] = useState(false)
   const [showDonationForm, setShowDonationForm] = useState(false)
@@ -46,8 +45,7 @@ function App() {
       <header className="header">
         <div className="header-container">
           <div className="logo">
-            <h1>LIFE-LINK</h1>
-            <span className="motto">Where Every Drop Becomes Hope</span>
+            <h1> LIFE-LINK</h1>
           </div>
           <button 
             className="mobile-menu-toggle" 
@@ -64,13 +62,13 @@ function App() {
             <button className="nav-link-btn" onClick={() => { setShowHospitalDashboard(true); setMobileMenuOpen(false) }}>Hospital Dashboard</button>
             <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
             <div className="nav-auth-buttons">
-              <button className="btn-secondary" onClick={() => { setShowLogin(true); setMobileMenuOpen(false) }}>Log In</button>
               <button className="btn-primary" onClick={() => { setShowSignIn(true); setMobileMenuOpen(false) }}>Sign Up</button>
+              <button className="btn-secondary" onClick={() => { setShowLogin(true); setMobileMenuOpen(false) }}>Log In</button>
             </div>
           </nav>
           <div className="auth-buttons desktop-auth">
-            <button className="btn-secondary" onClick={() => setShowLogin(true)}>Log In</button>
             <button className="btn-primary" onClick={() => setShowSignIn(true)}>Sign Up</button>
+            <button className="btn-secondary" onClick={() => setShowLogin(true)}>Log In</button>
           </div>
         </div>
       </header>
@@ -78,18 +76,18 @@ function App() {
       
       <section className="home" id="home">
         <div className="home-content">
-          <h2 className="home-title">Every Drop Counts</h2>
+          <h2 className="home-title">SAVE A LIFE, DONATE BLOOD TODAY!</h2>
           <p className="home-subtitle">
-            Connecting donors with hospitals in need. Your donation can save a life today.
+             Register as a donor and make a difference.
+Book a quick, safe donation appointment near you.
           </p>
           <div className="home-buttons">
-            <button className="btn-home1" onClick={() => setShowDonationForm(true)}>I Want to Donate</button>
-            <a href='#donors'><button className="btn-home2">I Need Blood</button></a>
+            <button className="btn-home1" onClick={() => setShowDonationForm(true)}>Register To Donate</button>
           </div>
         </div>
         <div className="home-stats">
           <div className="stat-card">
-            <div className="stat-number">3,476</div>
+            <div className="stat-number">2,476</div>
             <div className="stat-label">Active Donors</div>
           </div>
           <div className="stat-card">
@@ -101,273 +99,23 @@ function App() {
             <div className="stat-label">Lives Saved</div>
           </div>
         </div>
-      </section>
+      </section>  
+      <h1>Donation Process</h1>
 
-      
-      <main className="main-content">
-        
-        <div className="tab-container">
-          <button
-            className={`tab ${activeTab === 'donor' ? 'active' : ''}`}
-            onClick={() => setActiveTab('donor')}>
-           Find Donor Portal
-          </button>
-          <button
-            className={`tab ${activeTab === 'hospital' ? 'active' : ''}`}
-            onClick={() => setActiveTab('hospital')}>
-            Hospital Portal
-          </button>
+      <section className='home-stats' id='process'>
+        <div className='stat-card'>
+          <div className='stat-number'>Registration</div>
+          <div className='stat-label'>Register by entering your name, contact information,
+            and blood type so we can notify you when donors are needed.</div>
+        </div>
+        <div className='stat-card'>
+          <div className='stat-number'>Donation</div>
+          <div className='stat-label'>Visit the nearest center to donate and save lives.</div>
         </div>
 
-        <div className="donate-request-section">
-          <div className="donate-request-content">
-            <div className="donate-request-text">
-              <h2>Urgent: Blood Donation Needed</h2>
-              <p>Hospitals in your area are running low on blood supplies. Your donation can save multiple lives today.</p>
-              <div className="donate-request-stats">
-                <span className="request-stat">🔴 <strong>12</strong> Critical Requests</span>
-                <span className="request-stat">⚠️ <strong>28</strong> Urgent Needs</span>
-                <span className="request-stat">📅 <strong>35</strong> Pending This Week</span>
-              </div>
-            </div>
-            <div className="donate-request-actions">
-              <button className="btn-donate" onClick={() => setShowDonationForm(true)}>Donate Now</button>
-            </div>
-          </div>
-        </div>
-
-        
-        {activeTab === 'donor' && (
-          <section className="portal-section" id="donors">
-            <div className="portal-header">
-              <h2>Find Blood Donors</h2>
-              <p>Search for available donors by blood type and location</p>
-            </div>
-            
-            <div className="search-container">
-              <div className="search-filters">
-                <div className="filter-group">
-                  <label>Blood Type</label>
-                  <select 
-                    className="filter-select"
-                    value={bloodType}
-                    onChange={(e) => setBloodType(e.target.value)}
-                  >
-                    <option value="">All Types</option>
-                    <option value="A+">A+</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="AB+">AB+</option>
-                    <option value="AB-">AB-</option>
-                    <option value="O+">O+</option>
-                    <option value="O-">O-</option>
-                  </select>
-                </div>
-                <div className="filter-group">
-                  <label>Location</label>
-                  <input
-                    type="text"
-                    className="filter-input"
-                    placeholder="Enter city or area"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}/>
-                </div>
-                <button className="btn-search">Search Donors</button>
-              </div>
-            </div>
-
-            <div className="donor-cards">
-              <div className="donor-card">
-                <div className="donor-header">
-                  <div className="blood-type-badge">O+</div>
-                  <span className="status-badge available">Available</span>
-                </div>
-                <div className="donor-info">
-                  <h3>Salim Isa</h3>
-                  <p className="donor-location">🗺️ Jabi Road, Isa Kaita </p>
-                  <p className="donor-details">Last donation: 5 months ago</p>
-                  <p className="donor-details">Ready to donate: Yes</p>
-                </div>
-                <button className="btn-contact">Contact Donor</button>
-              </div>
-
-              <div className="donor-card">
-                <div className="donor-header">
-                  <div className="blood-type-badge">A+</div>
-                  <span className="status-badge available">Available</span>
-                </div>
-                <div className="donor-info">
-                  <h3>Mukthar Ibrahim</h3>
-                  <p className="donor-location">🗺️ New Millennium City</p>
-                  <p className="donor-details">Last donation: 3 months ago</p>
-                  <p className="donor-details">Ready to donate: Yes</p>
-                </div>
-                <button className="btn-contact">Contact Donor</button>
-              </div>
-
-              <div className="donor-card">
-                <div className="donor-header">
-                  <div className="blood-type-badge">AB</div>
-                  <span className="status-badge unavailable">Unavailable</span>
-                </div>
-                <div className="donor-info">
-                  <h3>Mike Johnson</h3>
-                  <p className="donor-location">🗺️ Unguwan Rimi</p>
-                  <p className="donor-details">Last donation: 1 month ago</p>
-                  <p className="donor-details">Ready to donate: No</p>
-                </div>
-                <button className="btn-contact">Contact Donor</button>
-              </div>
-            </div>
-          
-
-            <div className="cta-section">
-              <h3>Want to become a donor?</h3>
-              <p>Join our community and help save lives</p>
-              <button className="btn-register" onClick={() => setShowSignIn(true)}>Register as Donor</button>
-            </div>
-          </section>
-        )}
-
-        
-        {activeTab === 'hospital' && (
-          <section className="portal-section" id="hospitals">
-            <div className="portal-header">
-              <h2>Hospital Portal</h2>
-              <p>Manage blood requests</p>
-            </div>
-
-            <div className="hospital-dashboard">
-              <div className="dashboard-stats">
-                <div className="dashboard-stat">
-                  <div className="stat-icon">🩸</div>
-                  <div>
-                    <div className="stat-value">10</div>
-                    <div className="stat-desc">Pending Requests</div>
-                  </div>
-                </div>
-                <div className="dashboard-stat">
-                  <div className="stat-icon">✅</div>
-                  <div>
-                    <div className="stat-value">45</div>
-                    <div className="stat-desc">Completed This Month</div>
-                  </div>
-                </div>
-                <div className="dashboard-stat">
-                  <div className="stat-icon">🫂</div>
-                  <div>
-                    <div className="stat-value">30</div>
-                    <div className="stat-desc">Matched Donors</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="request-section">
-                <div className="section-header">
-                  <h3>Create Blood Request</h3>
-                  <button className="btn-new-request">+ New Request</button>
-                </div>
-
-                <div className="request-form">
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>Blood Type Required</label>
-                      <select className="form-select">
-                        <option value="">Select blood type</option>
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="B+">B+</option>
-                        <option value="B-">B-</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB-">AB-</option>
-                        <option value="O+">O+</option>
-                        <option value="O-">O-</option>
-                      </select>
-                    </div>
-                    <div className="form-group">
-                      <label>Units Required</label>
-                      <input type="number" className="form-input" placeholder="Enter units" />
-                    </div>
-                  </div>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>Urgency</label>
-                      <select className="form-select">
-                        <option value="normal">Normal</option>
-                        <option value="urgent">Urgent</option>
-                        <option value="critical">Critical</option>
-                      </select>
-                    </div>
-                    <div className="form-group">
-                      <label>Required Date</label>
-                      <input type="date" className="form-input" />
-                    </div>
-                  </div>
-                  <div className="form-group full-width">
-                    <label>Additional Notes</label>
-                    <textarea className="form-textarea" placeholder="Any special requirements or notes..."></textarea>
-                  </div>
-                  <button className="btn-submit">Submit Request</button>
-                </div>
-              </div>
-
-              <div className="requests-list">
-                <h3>Recent Requests</h3>
-                <div className="request-card">
-                  <div className="request-header">
-                    <span className="blood-type-badge-small">O+</span>
-                    <span className="urgency-badge urgent">Urgent</span>
-                  </div>
-                  <div className="request-info">
-                    <p><strong>Units:</strong> 3 bags</p>
-                    <p><strong>Date:</strong> Dec 15, 2026</p>
-                    <p><strong>Status:</strong> <span className="status-pending">Pending</span></p>
-                  </div>
-                  <div className="request-actions">
-                    <button className="btn-action">View Matches</button>
-                    <button className="btn-action-secondary">Cancel</button>
-                  </div>
-                </div>
-
-                <div className="request-card">
-                  <div className="request-header">
-                    <span className="blood-type-badge-small">O+</span>
-                    <span className="urgency-badge urgent">Urgent</span>
-                  </div>
-                  <div className="request-info">
-                    <p><strong>Units:</strong> 3 bags</p>
-                    <p><strong>Date:</strong> Dec 15, 2026</p>
-                    <p><strong>Status:</strong> <span className="status-pending">Pending</span></p>
-                  </div>
-                  <div className="request-actions">
-                    <button className="btn-action">View Matches</button>
-                    <button className="btn-action-secondary">Cancel</button>
-                  </div>
-                </div>
-
-                <div className="request-card">
-                  <div className="request-header">
-                    <span className="blood-type-badge-small">A-</span>
-                    <span className="urgency-badge normal">Normal</span>
-                  </div>
-                  <div className="request-info">
-                    <p><strong>Units:</strong> 2 bags</p>
-                    <p><strong>Date:</strong> Dec 20, 2026</p>
-                    <p><strong>Status:</strong> <span className="status-matched">Matched</span></p>
-                  </div>
-                  <div className="request-actions">
-                    <button className="btn-action">View Matches</button>
-                    <button className="btn-action-secondary">Cancel</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-      </main>
-
-      
+        </section>  
+        <h1>Ready To Save A Life Today?</h1>
+        <button className='btn-home1' onClick={() => { setShowSignIn(true); setMobileMenuOpen(false) }}>Sign Up To Donate</button>
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
@@ -377,13 +125,13 @@ function App() {
           <div className="footer-section">
             <h4>Quick Links</h4>
             <a href="#home">Home</a>
-            <a href="#donors">Find Donors</a>
-            <a href="#hospitals">Hospitals</a>
+            <a href='#'>Contact Us</a>
             <a href="#about">About Us</a>
           </div>
           <div className="footer-section">
             <h4>Contact</h4>
-            <p>Email: imuktar437@gmailcom</p>
+            <a href='imuktar437@gmailcom'>imuktar437@gmailcom</a>
+            <p>Follow Us </p>
           </div>
         </div>
         <div className="footer-bottom">
