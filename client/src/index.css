@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+
+
+
+#pop{
+    margin: 2rem 0;
+}
+
+
+.x{
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.act-btn{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 4rem 0;
+    place-self: center;
+}
+
+.act-btn button{
+    padding: .5rem 2rem;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px;
+    cursor: pointer;
+}
+
+.approve-btn{
+    background-color: rgb(26, 199, 26);
+}
+
+.deny-btn{
+    background-color: rgb(208, 11, 11);
+}
