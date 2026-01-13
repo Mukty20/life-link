@@ -164,8 +164,9 @@ function DonationForm({ onClose }) {
                   required
                 >
                   <option value="">Select Hospital</option>
+                  <option value="Hospital 1">Hospital 1</option>
                   {
-                    loading?  <option value={''}>loaing..</option> : 
+                    loading?  <option value={''}>loading..</option> : 
                     hospitals.map((x, i) => {
                       return(
                         <option value={x._id} key={i}>{x.username}</option>

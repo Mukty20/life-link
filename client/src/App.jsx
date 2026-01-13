@@ -136,7 +136,7 @@ function App() {
             </div>
 
             }
-            <div className={` absolute bg-[white] right-[0] rounded-2xl flex flex-col gap-[1rem] ${!loggout? 'hidden' : ''}`} style={{padding:'1rem'}}>
+            <div className={` absolute bg-[white] right-0 rounded-2xl flex flex-col gap-4 ${!loggout? 'hidden' : ''}`} style={{padding:'1rem'}}>
 
               <div className='cursor-pointer bold' onClick={() => loggoutPost('donor')}>Logout as Donor</div>
 

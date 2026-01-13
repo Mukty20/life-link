@@ -658,7 +658,7 @@ h1{
 
 .footer {
   width: 100%;
-  background-image: url("./components/images/image60.jpg");
+  background: whitesmoke;
   background-size: cover;
   color: black;
   padding: 30px;
