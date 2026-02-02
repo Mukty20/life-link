@@ -166,17 +166,17 @@ function App() {
         <div className="home-stats">
 
           <div className="stat-card">
-            <div className="stat-number">2,476</div>
+            <div className="stat-number">1,476</div>
             <div className="stat-label">Active Donors</div>
           </div>
 
           <div className="stat-card">
-            <div className="stat-number">69</div>
+            <div className="stat-number">45</div>
             <div className="stat-label">Partner Hospitals</div>
           </div>
 
           <div className="stat-card">
-            <div className="stat-number">4,565</div>
+            <div className="stat-number">2,565</div>
             <div className="stat-label">Lives Saved</div>
           </div>
 
